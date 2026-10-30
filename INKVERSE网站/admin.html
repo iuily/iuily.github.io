@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111311">
+  <title>君 / INKVERSE · 内容编辑</title>
+  <link rel="stylesheet" href="./admin.css">
+  <script src="./content.js" defer></script>
+  <script src="./admin.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#editor-title">跳到编辑内容</a>
+  <div class="ink-line" aria-hidden="true"></div>
+  <header class="masthead">
+    <a class="home-link" href="./index.html"><span aria-hidden="true">←</span> 返回主页</a>
+    <a class="help-link" href="./使用说明.html">查看使用说明 ↗</a>
+    <div class="masthead-main">
+      <div class="heading-group"><span class="seal" aria-hidden="true">君</span><div><p class="eyebrow">君 / INKVERSE</p><h1>内容编辑</h1></div></div>
+      <div class="main-actions">
+        <span class="save-state" id="save-state">尚无改动</span>
+        <button type="button" class="button secondary" id="preview-button">预览草稿 <span aria-hidden="true">↗</span></button>
+        <button type="button" class="button primary" id="save-button">保存草稿</button>
+      </div>
+    </div>
+  </header>
+  <main class="page-shell">
+    <aside class="guide" aria-label="更新网站说明">
+      <div><span class="guide-number" aria-hidden="true">01</span><p><strong>编辑内容</strong><span>修改资料，添加作品或文章。</span></p></div>
+      <div><span class="guide-number" aria-hidden="true">02</span><p><strong>保存与预览</strong><span>草稿先收在当前浏览器里。</span></p></div>
+      <div><span class="guide-number" aria-hidden="true">03</span><p><strong>下载后公开更新</strong><span>用下载文件替换仓库中的 content.js。</span></p></div>
+      <p class="storage-note">保存草稿只保存在此浏览器；下载 content.js 后上传替换 GitHub 仓库中的同名文件才会公开更新。此页没有登录和在线发布功能。</p>
+    </aside>
+
+    <div class="message" id="status" role="status" aria-live="polite" tabindex="-1">内容正在打开……</div>
+
+    <div class="studio">
+      <aside class="library" aria-label="选择编辑内容">
+        <div class="section-tabs" role="tablist" aria-label="内容类型">
+          <button class="section-tab active" type="button" role="tab" id="tab-profile" aria-controls="editor-panel" aria-selected="true" data-tab="profile">资料</button>
+          <button class="section-tab" type="button" role="tab" id="tab-works" aria-controls="editor-panel" aria-selected="false" tabindex="-1" data-tab="works">作品 <span id="work-count">0</span></button>
+          <button class="section-tab" type="button" role="tab" id="tab-posts" aria-controls="editor-panel" aria-selected="false" tabindex="-1" data-tab="posts">文章 <span id="post-count">0</span></button>
+        </div>
+        <div class="library-heading"><h2 id="library-title">个人资料</h2><button type="button" class="add-button" id="add-button" hidden>＋ 新增</button></div>
+        <div id="item-list" class="item-list"></div>
+        <div class="library-footer"><span aria-hidden="true">/</span><p>每件作品，每篇文章，<br>都是你故事的一部分。</p></div>
+      </aside>
+      <section class="editor-panel" id="editor-panel" role="tabpanel" aria-labelledby="tab-profile">
+        <div class="editor-header"><div><p class="eyebrow" id="editor-kicker">个人资料</p><h2 id="editor-title" tabindex="-1">关于自己</h2></div><button type="button" class="delete-button" id="delete-button" hidden>删除此项</button></div>
+        <form id="editor-form"></form>
+        <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">＋</span><h3>还没有内容</h3><p>点击“新增”，添加第一件作品或第一篇文章。</p></div>
+      </section>
+    </div>
+
+    <section class="file-tools" aria-label="导入和导出内容">
+      <div><p class="eyebrow">保存 · 预览 · 发布</p><h2>准备好了，就更新网站</h2><p>下载完整的内容文件，然后在 GitHub 仓库里替换同名文件并提交。首页、作品和文章会一起更新。</p><p class="file-tip">没有项目截图时可留空图片，使用文字排版封面。添加图片时，先放进网站的 assets 文件夹，再填写路径。</p></div>
+      <div class="file-actions"><button type="button" class="button primary" id="export-button">下载 content.js <span aria-hidden="true">↓</span></button><button type="button" class="button text-button" id="import-button">导入已有内容</button><input id="import-file" type="file" accept=".json,.js,application/json,text/javascript" hidden><button type="button" class="button text-button" id="reset-button">恢复网站原有内容</button></div>
+    </section>
+    <footer class="footer">君 / INKVERSE <span aria-hidden="true">·</span> 下载的文件也可以作为内容备份</footer>
+  </main>
+</body>
+</html>

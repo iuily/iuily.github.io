@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101211">
+  <meta name="description" content="我是君，也叫 INKVERSE。游戏玩家、创作爱好者、折腾党。这里展示 VRChat 模型、虚拟世界和个人软件工具。">
+  <title>INKVERSE · 君的个人空间</title>
+  <link rel="icon" href="./assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./content.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#works">跳到作品</a>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="draft-banner" id="draft-banner" hidden>当前为本机草稿预览，访客看不到这些改动。<a href="./admin.html">返回编辑</a></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="INKVERSE，回到首页"><span class="brand-symbol" aria-hidden="true">君</span><span data-profile="handle">INKVERSE</span></a>
+    <nav aria-label="主导航"><a href="#home" class="active"><span>01</span> 入境</a><a href="#works"><span>02</span> 作品</a><a href="#journal"><span>03</span> 手记</a><a href="#about"><span>04</span> 关于</a></nav>
+    <button class="motion-control" id="motion-toggle" type="button" aria-pressed="false"><span class="motion-icon" aria-hidden="true">Ⅱ</span><span class="motion-label">静止观卷</span></button>
+  </header>
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="hero-art" aria-hidden="true"><img src="./assets/phantom-blade-zero.jpg" alt="" fetchpriority="high"><div class="art-shade"></div><div class="mist mist-one"></div><div class="mist mist-two"></div><div class="light-blade"></div></div>
+      <div class="hero-inner">
+        <p class="eyebrow hero-reveal"><span class="red-line"></span> PERSONAL PORTFOLIO <span class="edition">/ 001</span></p>
+        <h1 id="hero-heading" class="hero-title"><span class="title-line"><span data-profile="name">君</span></span></h1>
+        <p class="hero-handle hero-reveal" data-profile="handle">INKVERSE</p>
+        <div class="hero-copy hero-reveal"><p class="hero-identity" id="hero-tagline">游戏玩家 / 创作爱好者 / 折腾党</p><p id="hero-intro">喜欢玩游戏、拍照，折腾模型、软件和各种电子设备。<br>这里放着我的作品，以及一些正在做的东西。</p></div>
+        <a class="explore-link hero-reveal" href="#works"><span>看看我的作品</span><span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <p class="hero-side" aria-hidden="true">PLAY / MAKE / EXPLORE</p>
+      <div class="hero-bottom"><a href="#works" class="scroll-cue"><span class="scroll-stroke" aria-hidden="true"></span> 向下浏览 <small>SCROLL TO EXPLORE</small></a><span class="hero-source">主视觉 /《影之刃零》游戏截图</span><span class="hero-date">PERSONAL SPACE <span class="tiny-star">✳</span></span></div>
+    </section>
+
+    <section class="intro section-pad" aria-labelledby="intro-heading">
+      <div class="intro-label reveal"><span class="chapter">HELLO / 你好</span><span class="small-rule"></span><p>欢迎随便看看。</p></div>
+      <div class="intro-text reveal"><h2 id="intro-heading">从一个想法开始，<br><span>慢慢把它做出来。</span></h2><p>我喜欢游戏、虚拟世界，也喜欢折腾软件和模型。<br>有些从零开始，有些在已有作品上修改，也会借助 AI 参与开发。</p></div>
+      <span class="intro-glyph" aria-hidden="true">行</span>
+    </section>
+
+    <section class="works section-pad" id="works" aria-labelledby="works-heading">
+      <div class="section-heading reveal"><div><p class="eyebrow">01 / SELECTED WORKS</p><h2 id="works-heading">做过的，和正在做的。</h2></div><p class="section-note">VRChat 模型、虚拟世界，<br>以及为自己做的工具。</p></div>
+      <div class="section-toolbar reveal"><div id="work-filters" class="filters" aria-label="按作品类别筛选"></div><span class="sample-label" id="work-count-label"></span></div>
+      <div class="work-grid" id="work-grid"></div>
+      <p class="empty-message" id="work-empty" hidden>这一页暂时留白，作品正在路上。</p>
+    </section>
+
+    <div class="interlude" aria-hidden="true"><div class="interlude-line"></div><span>PLAY. MAKE. EXPLORE.</span><div class="interlude-line"></div></div>
+
+    <section class="journal section-pad" id="journal" aria-labelledby="journal-heading">
+      <div class="section-heading reveal"><div><p class="eyebrow">02 / FIELD NOTES</p><h2 id="journal-heading">过程，也值得留下。</h2></div><label class="search-field"><span aria-hidden="true">⌕</span><input type="search" id="post-search" placeholder="搜索开发记录与想法" aria-label="搜索文章"><span class="search-key" aria-hidden="true">↵</span></label></div>
+      <div class="journal-layout"><aside class="journal-aside reveal"><span class="vertical-word" aria-hidden="true">开发与记录</span><p>改模、做地图、写工具。<br>偶尔也记一点想法。</p><span id="post-count" class="post-count"></span></aside><div id="post-list" class="post-list" aria-live="polite"></div></div>
+      <p class="empty-message" id="post-empty" hidden>尚未寻到这一篇，换个关键词试试。</p>
+    </section>
+
+    <section class="about section-pad" id="about" aria-labelledby="about-heading">
+      <div class="about-art reveal" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="about-monogram">君</span><span class="about-art-caption">INKVERSE / PERSONAL SPACE</span></div>
+      <div class="about-copy reveal"><p class="eyebrow">03 / ABOUT ME</p><h2 id="about-heading">你好，我是<span data-profile="name">君</span>。<br>也叫 <span data-profile="handle">INKVERSE</span>。</h2><p id="about-content"></p><div class="profile-details"><div><h3>平时喜欢</h3><div class="profile-tags" id="interest-tags"></div></div><div><h3>常用工具</h3><div class="profile-tags" id="tool-tags"></div></div></div></div>
+    </section>
+    <section class="contact section-pad" id="contact" aria-labelledby="contact-heading"><div class="section-heading reveal"><div><p class="eyebrow">04 / FIND ME</p><h2 id="contact-heading">在这些地方找到我。</h2></div><p class="section-note">游戏，作品，或者一个有趣的想法。<br>都可以聊聊。</p></div><div id="contact-links" class="contact-links reveal"></div></section>
+  </main>
+  <footer class="site-footer"><a class="footer-brand" href="#home"><span data-profile="handle">INKVERSE</span> <span>·</span> <span data-profile="name">君</span></a><p>我是君。这些是我喜欢的，也是我做过的。</p><div><a href="./admin.html">内容编辑 <span aria-hidden="true">↗</span></a><a href="#home" aria-label="返回顶部">回到首页 ↑</a></div><small>© <span id="year">2026</span> <span data-profile="handle">INKVERSE</span> · 主视觉为《影之刃零》游戏截图</small></footer>
+  <dialog class="reader" id="reader" aria-labelledby="reader-title"><div class="reader-topbar"><span id="reader-kind">FIELD NOTES</span><button type="button" id="close-reader" aria-label="关闭阅读">关闭 <span aria-hidden="true">×</span></button></div><article class="reader-inner"><p class="eyebrow" id="reader-meta"></p><h2 id="reader-title"></h2><p class="reader-summary" id="reader-summary"></p><p id="reader-contribution" class="reader-contribution"></p><img class="reader-image" id="reader-image" alt="" hidden><div id="reader-body" class="reader-body"></div><div id="reader-tags" class="reader-tags"></div><a id="reader-link" class="explore-link" target="_blank" rel="noopener noreferrer" hidden>查看完整作品 <span aria-hidden="true">↗</span></a><p class="reader-end">— THANKS FOR READING —</p></article></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
